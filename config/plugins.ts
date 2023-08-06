@@ -28,4 +28,40 @@ export default ({ env }) => ({
       },
     },
   },
+
+  // OpenAPI Documentation
+  documentation: {
+    enabled: true,
+    config: {
+      openapi: "3.0.0",
+      info: {
+        version: "1.0.0",
+        title: "DOCUMENTATION",
+        description: "Just some docutmentation for the api",
+        termsOfService: "Nothing yet to see here",
+        contact: {
+          name: "tridims",
+          email: "tri.dimas@student.ub.ac.id",
+          url: "github.com/tridims",
+        },
+        license: {
+          name: "AGPL-3.0",
+          url: "https://www.gnu.org/licenses/agpl-3.0.en.html",
+        },
+      },
+      "x-strapi-config": {
+        // Leave empty to ignore plugins during generation
+        plugins: [],
+        path: "/documentation",
+      },
+      servers: [
+        { url: "http://localhost:1337/api", description: "Development server" },
+      ],
+      externalDocs: {
+        description: "Find out more",
+        url: "https://docs.strapi.io/developer-docs/latest/getting-started/introduction.html",
+      },
+      security: [{ bearerAuth: [] }],
+    },
+  },
 });
