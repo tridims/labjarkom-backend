@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_people_people_data",
+  "info": {
+    "displayName": "People Data",
+    "icon": "user"
+  },
+  "options": {},
+  "attributes": {
+    "email": {
+      "type": "email"
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "nim": {
+      "type": "string",
+      "required": true
+    },
+    "phoneNumber": {
+      "type": "string"
+    },
+    "address": {
+      "type": "text"
+    }
+  }
+}

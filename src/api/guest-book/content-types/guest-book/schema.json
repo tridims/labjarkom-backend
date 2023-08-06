@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "guest_books",
+  "info": {
+    "singularName": "guest-book",
+    "pluralName": "guest-books",
+    "displayName": "Guest Book"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "nim": {
+      "type": "string",
+      "required": true
+    },
+    "phoneNumber": {
+      "type": "string",
+      "required": true
+    },
+    "purpose": {
+      "type": "text"
+    }
+  }
+}

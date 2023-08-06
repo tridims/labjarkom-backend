@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "member_lists",
+  "info": {
+    "singularName": "member-list",
+    "pluralName": "member-lists",
+    "displayName": "Member List"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "Category": {
+      "type": "enumeration",
+      "enum": [
+        "Dosen",
+        "Mahasiswa"
+      ],
+      "required": true,
+      "default": "Mahasiswa"
+    },
+    "position": {
+      "type": "string",
+      "required": true
+    },
+    "department": {
+      "type": "enumeration",
+      "enum": [
+        "Teknik Informatika",
+        "Teknik Komputer",
+        "Sistem Informasi",
+        "Teknologi Informasi",
+        "Pendidikan Teknologi Informasi"
+      ],
+      "required": true,
+      "default": "Teknik Informatika"
+    },
+    "scientificField": {
+      "type": "text",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    }
+  }
+}

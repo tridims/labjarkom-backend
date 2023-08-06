@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_agendas",
+  "info": {
+    "singularName": "event-agenda",
+    "pluralName": "event-agendas",
+    "displayName": "Event Agenda"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
