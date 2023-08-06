@@ -1,22 +1,7 @@
 export default ({ env }) => ({
-  // // ...
-  // upload: {
-  //   config: {
-  //     provider: "aws-s3",
-  //     providerOptions: {
-  //       accessKeyId: env("MINIO_ACCESS_KEY_ID"),
-  //       secretAccessKey: env("MINIO_ACCESS_SECRET"),
-  //       endpoint: env("MINIO_ENDPOINT"),
-  //       params: {
-  //         Bucket: env("MINIO_BUCKET"),
-  //       },
-  //     },
-  //   },
-  // },
-  // // ...
-
-  // ...
+  // AWS S3 / Minio
   upload: {
+    enabled: true,
     config: {
       provider: "aws-s3",
       providerOptions: {
@@ -43,5 +28,4 @@ export default ({ env }) => ({
       },
     },
   },
-  // ...
 });
