@@ -4,14 +4,15 @@
   "info": {
     "singularName": "inventory-borrowing-log",
     "pluralName": "inventory-borrowing-logs",
-    "displayName": "Inventory Borrowing Log"
+    "displayName": "Inventory Borrowing Log",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "idPeminjaman": {
+    "itemLoanCode": {
       "type": "uid",
       "required": true
     },
@@ -22,7 +23,7 @@
       "component": "people.people-data",
       "required": true
     },
-    "dateOfReturn": {
+    "plannedDateOfReturn": {
       "type": "date",
       "required": true
     },
@@ -36,6 +37,22 @@
       ],
       "required": true,
       "default": "not yet borrowed"
+    },
+    "purpose": {
+      "type": "text"
+    },
+    "borrowDate": {
+      "type": "date",
+      "required": true
+    },
+    "actualDateOfReturn": {
+      "type": "date"
+    },
+    "inventories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::inventory.inventory",
+      "inversedBy": "inventory_borrowing_logs"
     }
   }
 }

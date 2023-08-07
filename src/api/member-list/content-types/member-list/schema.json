@@ -4,7 +4,8 @@
   "info": {
     "singularName": "member-list",
     "pluralName": "member-lists",
-    "displayName": "Member List"
+    "displayName": "Member List",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,7 +16,7 @@
       "type": "string",
       "required": true
     },
-    "Category": {
+    "category": {
       "type": "enumeration",
       "enum": [
         "Dosen",
@@ -47,6 +48,24 @@
     "email": {
       "type": "email",
       "required": true
+    },
+    "nim_nip": {
+      "type": "string",
+      "required": true
+    },
+    "activities": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::activity.activity",
+      "mappedBy": "member_lists"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

@@ -4,7 +4,8 @@
   "info": {
     "singularName": "activity",
     "pluralName": "activities",
-    "displayName": "Activity"
+    "displayName": "Activity",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,17 +17,35 @@
       "required": true
     },
     "image": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
       "allowedTypes": [
         "images",
         "videos"
-      ],
-      "type": "media",
-      "multiple": true,
-      "required": true
+      ]
     },
     "description": {
       "type": "text",
       "required": true
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "mappedBy": "activities"
+    },
+    "article": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::article.article",
+      "inversedBy": "activity"
+    },
+    "member_lists": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::member-list.member-list",
+      "inversedBy": "activities"
     }
   }
 }

@@ -4,31 +4,32 @@
   "info": {
     "singularName": "article",
     "pluralName": "articles",
-    "displayName": "Article"
+    "displayName": "Article",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Title": {
+    "title": {
       "type": "string",
       "required": true,
       "unique": true
     },
-    "Image": {
-      "allowedTypes": [
-        "images"
-      ],
+    "image": {
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
-    "Content": {
+    "content": {
       "type": "richtext",
       "required": true
     },
-    "Category": {
+    "category": {
       "type": "enumeration",
       "enum": [
         "Achievement",
@@ -38,6 +39,12 @@
       ],
       "default": "Blog",
       "required": true
+    },
+    "activity": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::activity.activity",
+      "mappedBy": "article"
     }
   }
 }
