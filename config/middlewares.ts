@@ -31,7 +31,15 @@ export default [
       },
     },
   },
-  "strapi::cors",
+  // "strapi::cors",
+  {
+    name: "strapi::cors",
+    config: {
+      enabled: true,
+      header: "*",
+      origin: ["https://icn-filkom.ub.ac.id/api"],
+    },
+  },
   "strapi::poweredBy",
   "strapi::logger",
   "strapi::query",
