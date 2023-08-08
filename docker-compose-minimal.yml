@@ -18,43 +18,25 @@ services:
       DATABASE_PASSWORD: ${DATABASE_PASSWORD}
 
       # Application
+      # HOST:
       JWT_SECRET: ${JWT_SECRET}
       ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
       APP_KEYS: ${APP_KEYS}
       NODE_ENV: production
-      MINIO: true
+    volumes:
+      - ./config:/opt/app/config
+      - ./src:/opt/app/src
+      - ./package.json:/opt/package.json
+      - ./yarn.lock:/opt/yarn.lock
+      # - ./.env:/opt/app/.env
+      - ./public/uploads:/opt/app/public/uploads
 
-      # Minio
-      MINIO_ENDPOINT: "http://minio-storage:9000"
-      MINIO_READ_ACCESS_ENDPOINT: "http://10.34.15.186:9000/strapi"
-      MINIO_READ_ACCESS_ROOT_PATH: "strapi"
-      MINIO_ACCESS_KEY: ${MINIO_ROOT_USER}
-      MINIO_SECRET_KEY: ${MINIO_ROOT_PASSWORD}
-      MINIO_BUCKET: strapi
     ports:
       - "1337:1337"
     networks:
       - backendNetwork
     depends_on:
       - postgresdb
-      - minio-storage
-
-  minio-storage:
-    container_name: minio-storage
-    image: quay.io/minio/minio:latest
-    restart: unless-stopped
-    env_file: .env
-    environment:
-      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
-      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
-    volumes:
-      - minio-data:/data
-    ports:
-      - "9000:9000"
-      - "9001:9001"
-    networks:
-      - backendNetwork
-    command: server --console-address ":9001" /data
 
   postgresdb:
     container_name: postgresdb
@@ -76,7 +58,6 @@ services:
 
 volumes:
   db-data:
-  minio-data:
 
 networks:
   backendNetwork:
