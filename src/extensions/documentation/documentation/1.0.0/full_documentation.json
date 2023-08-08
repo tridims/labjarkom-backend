@@ -14,7 +14,7 @@
       "name": "AGPL-3.0",
       "url": "https://www.gnu.org/licenses/agpl-3.0.en.html"
     },
-    "x-generation-date": "2023-08-07T14:51:07.441Z"
+    "x-generation-date": "2023-08-08T03:58:11.714Z"
   },
   "x-strapi-config": {
     "plugins": [],
@@ -8972,7 +8972,7 @@
               "phoneNumber",
               "position",
               "keperluan",
-              "cv"
+              "portofolio"
             ],
             "type": "object",
             "properties": {
@@ -8999,7 +8999,7 @@
               "keperluan": {
                 "type": "string"
               },
-              "cv": {
+              "portofolio": {
                 "type": "array",
                 "items": {
                   "oneOf": [
@@ -9072,7 +9072,7 @@
           "phoneNumber",
           "position",
           "keperluan",
-          "cv"
+          "portofolio"
         ],
         "properties": {
           "email": {
@@ -9098,7 +9098,7 @@
           "keperluan": {
             "type": "string"
           },
-          "cv": {
+          "portofolio": {
             "type": "object",
             "properties": {
               "data": {

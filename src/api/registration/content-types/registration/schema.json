@@ -41,13 +41,13 @@
       "type": "text",
       "required": true
     },
-    "cv": {
-      "allowedTypes": [
-        "files"
-      ],
+    "portofolio": {
       "type": "media",
       "multiple": true,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "files"
+      ]
     }
   }
 }
