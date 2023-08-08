@@ -5,8 +5,8 @@ export default ({ env }) => ({
     config: {
       provider: "aws-s3",
       providerOptions: {
-        baseUrl: env("CDN_URL"),
-        rootPath: env("CDN_ROOT_PATH"),
+        baseUrl: env("MINIO_READ_ACCESS_ENDPOINT"),
+        // rootPath: env("MINIO_READ_ACCESS_ROOT_PATH"),
         s3Options: {
           accessKeyId: env("MINIO_ACCESS_KEY"),
           secretAccessKey: env("MINIO_SECRET_KEY"),

@@ -14,6 +14,7 @@ export default [
             "blob:",
             "market-assets.strapi.io",
             "localhost:9000",
+            "lab-icn.ub.ac.id",
           ],
           "media-src": [
             "'self'",
@@ -21,6 +22,7 @@ export default [
             "blob:",
             "market-assets.strapi.io",
             "localhost:9000",
+            "lab-icn.ub.ac.id",
           ],
           upgradeInsecureRequests: null,
         },
