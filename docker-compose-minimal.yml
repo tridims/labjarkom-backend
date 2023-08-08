@@ -18,18 +18,12 @@ services:
       DATABASE_PASSWORD: ${DATABASE_PASSWORD}
 
       # Application
-      # HOST:
       JWT_SECRET: ${JWT_SECRET}
       ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
       APP_KEYS: ${APP_KEYS}
       NODE_ENV: production
     volumes:
-      - ./config:/opt/app/config
-      - ./src:/opt/app/src
-      - ./package.json:/opt/package.json
-      - ./yarn.lock:/opt/yarn.lock
-      # - ./.env:/opt/app/.env
-      - ./public/uploads:/opt/app/public/uploads
+      - photo-data:/opt/app/public/uploads
 
     ports:
       - "1337:1337"
@@ -51,13 +45,12 @@ services:
     volumes:
       - db-data:/var/lib/postgresql/data/
 
-    ports:
-      - "5432:5432"
     networks:
       - backendNetwork
 
 volumes:
   db-data:
+  photo-data:
 
 networks:
   backendNetwork:
